@@ -7,6 +7,8 @@ import { FiltrosComponent } from './consulta/filtros/filtros.component';
 import { ResultadosComponent } from './consulta/resultados/resultados.component';
 import { ConsultaComponent } from './consulta/consulta/consulta.component';
 import { PlayerComponent } from './consulta/player/player.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { PlayerComponent } from './consulta/player/player.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
