@@ -9,6 +9,12 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class Mp3ServiceService {
+  GetDownloadAudioUrl(audioId: number): any {
+    return `${environment.baseurl}/mp3/download?id=${audioId}`;
+  }
+  GetAudioUrl(id: any):string {
+    return `${environment.baseurl}/mp3/play?id=${id}`;
+  }
 
   constructor(private http: HttpClient) { }
 
