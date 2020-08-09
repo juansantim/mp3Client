@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Archivo } from '../model/Archivo';
 
 import { environment } from '../../environments/environment';
+import { DataFilter } from '../model/DataFilter';
+import { PaginationResult } from '../model/PaginationResult';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +20,10 @@ export class Mp3ServiceService {
 
   constructor(private http: HttpClient) { }
 
-  GetAllAudios(): Observable<Archivo>{
-    return this.http.get<Archivo>(`${environment.baseurl}/mp3/getall`)
+  GetAllAudios(filterData: DataFilter, paginationResult: PaginationResult): Observable<PaginationResult>{
+    return this.http.post<PaginationResult>(`${environment.baseurl}/mp3/getall`, {
+      filter: filterData,
+      pagination: paginationResult
+    })
   }
 }

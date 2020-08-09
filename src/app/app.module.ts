@@ -12,6 +12,8 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DescargarAudioComponent } from './consulta/descargar-audio/descargar-audio.component';
 import { FormsModule } from '@angular/forms';
+import { PaginatorComponent } from './consulta/paginator/paginator.component';
+import { DescargarQueryResultComponent } from './consulta/descargar-query-result/descargar-query-result.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     ResultadosComponent,
     ConsultaComponent,
     PlayerComponent,
-    DescargarAudioComponent
+    DescargarAudioComponent,
+    PaginatorComponent,
+    DescargarQueryResultComponent
   ],
   imports: [
     BrowserModule,

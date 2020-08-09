@@ -1,5 +1,9 @@
-<app-filtros (OnSearch) = "OnResultadoConsulta($event)"></app-filtros>
+<app-filtros (OnSearch) = "OnResultadoConsulta($event)" (OnPaginationChange) = "OnPaginationChange($event)"></app-filtros>
 
 <app-resultados [Archivos] = "Archivos"></app-resultados>
+
+<app-paginator></app-paginator>
+
+<app-descargar-query-result></app-descargar-query-result>
 
 <iframe id="downloadFrame" style="display: none;"></iframe>
