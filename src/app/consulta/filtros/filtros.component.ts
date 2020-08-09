@@ -10,6 +10,10 @@ import { EventEmitter } from '@angular/core';
 })
 export class FiltrosComponent implements OnInit {
 
+  filtrarFechas: boolean;
+  filtrarOrigen: boolean;
+  filtrarDestino: boolean;
+
   constructor(private servie: Mp3ServiceService) { }
 
   @Output()

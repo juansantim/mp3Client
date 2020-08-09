@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Archivo } from 'src/app/model/Archivo';
 
 @Component({
   selector: 'app-consulta',
@@ -9,11 +10,13 @@ export class ConsultaComponent implements OnInit {
 
   constructor() { }
 
+  Archivos:Archivo[] = [];
+
   ngOnInit(): void {
   }
 
   OnResultadoConsulta(data){
-    console.log('La data esta aqui');
+    this.Archivos = data;
   }
 
 }
