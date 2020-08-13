@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Archivo } from 'src/app/model/Archivo';
 import { PaginationResult } from 'src/app/model/PaginationResult';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-consulta',
@@ -11,17 +12,24 @@ export class ConsultaComponent implements OnInit {
 
   constructor() { }
 
-  Archivos:Archivo[] = [];
-
   ngOnInit(): void {
+    this.pagination  = new PaginationResult();
   }
+
+  pagination: PaginationResult = new PaginationResult();
 
   OnResultadoConsulta(data:PaginationResult){
-    this.Archivos = data.data;
+    this.pagination = data;
   }
 
-  OnPaginationChange(data){
-    console.log('pagination changed', data);
+  OnPaginationChange(event: any){
+    console.log('pagination changed', event);
+  }
+
+
+  cargando = false;
+  ShowLoading(value){
+    this.cargando = value
   }
 
 }

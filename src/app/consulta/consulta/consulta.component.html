@@ -1,8 +1,14 @@
-<app-filtros (OnSearch) = "OnResultadoConsulta($event)" (OnPaginationChange) = "OnPaginationChange($event)"></app-filtros>
+<app-filtros 
+(OnSearch) = "OnResultadoConsulta($event)" 
+(OnPaginationChange) = "OnPaginationChange($event)"
+(OnSearchStatusChanged) = "ShowLoading($event)"></app-filtros>
 
-<app-resultados [Archivos] = "Archivos"></app-resultados>
+<app-resultados [Archivos] = "pagination.data"></app-resultados>
 
-<app-paginator></app-paginator>
+<img src="assets/img/ajax.gif" *ngIf="cargando" title="cargando...">
+
+<!-- <pagination [totalItems] = "pagination.totalItems" (pageChanged) = "OnPaginationChange($event)" [maxSize] = "10"></pagination> -->
+<app-paginator [pagination] = "pagination"></app-paginator>
 
 <app-descargar-query-result></app-descargar-query-result>
 

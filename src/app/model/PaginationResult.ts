@@ -1,11 +1,15 @@
-export class PaginationResult{
+export class PaginationResult {
 
     totalItems: number;
-    data = [];
     totalPages: number;
     currentPage: number;
+    pageSize: number;
+    data = [];
 
-    constructor(){
+    constructor() {
         this.currentPage = 0;
+        this.totalPages = 0;
+        this.pageSize = 10;
+        this.data = []
     }
 }
