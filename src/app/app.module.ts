@@ -15,7 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { PaginatorComponent } from './consulta/paginator/paginator.component';
 import { DescargarQueryResultComponent } from './consulta/descargar-query-result/descargar-query-result.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-
+import { LoginComponent } from './login/login.component';
+import { ConsultaAudiosComponent } from './pages/consulta-audios/consulta-audios.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     PlayerComponent,
     DescargarAudioComponent,
     PaginatorComponent,
-    DescargarQueryResultComponent
+    DescargarQueryResultComponent,
+    LoginComponent,
+    ConsultaAudiosComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     NgxAudioPlayerModule,
     BrowserAnimationsModule,
     FormsModule,
-    PaginationModule
+    PaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

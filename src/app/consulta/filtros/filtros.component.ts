@@ -50,6 +50,7 @@ export class FiltrosComponent implements OnInit {
 
   Buscar() {
     
+    this.OnSearchStatusChanged.emit(true);
     this.servie.GetAllAudios(this.dataFilter, this.pagination).subscribe(data => {
       this.OnSearch.emit(data);
       this.OnPaginationChange.emit(data);

@@ -6,11 +6,20 @@ import { Archivo } from '../model/Archivo';
 import { environment } from '../../environments/environment';
 import { DataFilter } from '../model/DataFilter';
 import { PaginationResult } from '../model/PaginationResult';
+import { LoginModel } from '../model/loginModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Mp3ServiceService {
+  
+  SaveToken(token: string) {
+    localStorage.setItem('princial', token);
+  }
+  
+  Login (model:LoginModel){
+    return this.http.post(`${environment.baseurl}/security/login`, model);
+  }
 
   GetDownloadAudioUrl(audioId: number): any {
     return `${environment.baseurl}/mp3/download?id=${audioId}`;
