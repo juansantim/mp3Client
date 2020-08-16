@@ -56,6 +56,8 @@ export class FiltrosComponent implements OnInit {
       this.OnPaginationChange.emit(data);
       this.OnSearchStatusChanged.emit(false);
       this.servie.fitroAplicadoSubject.next(data);
+      
+      this.servie.ChangeFilterSubject.next(this.dataFilter);
 
     });
   }

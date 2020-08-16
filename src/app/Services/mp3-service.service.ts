@@ -13,6 +13,10 @@ import { LoginModel } from '../model/loginModel';
 })
 export class Mp3ServiceService {
   
+  GetDownloadAll(dataFilter: DataFilter) {
+    return this.http.post(`${environment.baseurl}/mp3/downloadAll`, dataFilter);
+  }
+  
   SaveToken(token: string) {
     localStorage.setItem('princial', token);
   }
@@ -44,5 +48,7 @@ export class Mp3ServiceService {
   ChangePageSubject =  new Subject<number>();
 
   ChangePageSizeSubject =  new Subject<number>();
+
+  ChangeFilterSubject =  new Subject<DataFilter>();
 
 }

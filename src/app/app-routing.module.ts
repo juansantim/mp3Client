@@ -7,13 +7,10 @@ import { ConsultaComponent } from './consulta/consulta/consulta.component';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  {
-    path: "", component: MainPageComponent, children: [
-      { path: 'consulta', component: ConsultaComponent }
-    ]
-  },
+  { path: "", component: MainPageComponent, children: [{ path: 'consulta', component: ConsultaComponent }] },
   { path: "login", component: LoginComponent },
-  { path: "consulta", component: LoginComponent }
+  { path: "**", component: LoginComponent },
+  //{ path: "consulta", component: LoginComponent }
 ];
 
 

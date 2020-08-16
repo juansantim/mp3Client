@@ -7,22 +7,19 @@
 
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
 
-    <!-- Icon -->
     <div class="fadeIn first">
       <img src="assets/img/user.png" id="icon" alt="User Icon" />
     </div>
 
-    <!-- Login Form -->
     <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)] = "model.UserName"]>
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"  [(ngModel)] = "model.Password"]>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)] = "model.UserName">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"  [(ngModel)] = "model.Password">
       <input type="submit" class="btn btn-primary fadeIn fourth" value="Log In" (click) = "Login()">
-     
+
     </form>
     <br />
-    <!-- Remind Passowrd -->
+
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
     </div>

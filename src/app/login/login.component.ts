@@ -9,7 +9,7 @@ import { Mp3ServiceService } from '../Services/mp3-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  model:LoginModel;
+  model:LoginModel = new LoginModel();
 
   constructor(private service:Mp3ServiceService) { }
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   Login(){
     this.service.Login(this.model).subscribe(token =>{
-      this.service.SaveToken(token);
+      this.service.SaveToken(token.toString());
     }, error => {
 
     })
