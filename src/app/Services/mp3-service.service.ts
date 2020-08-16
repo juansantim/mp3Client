@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Archivo } from '../model/Archivo';
 
@@ -14,7 +14,10 @@ import { LoginModel } from '../model/loginModel';
 export class Mp3ServiceService {
   
   GetDownloadAll(dataFilter: DataFilter) {
-    return this.http.post(`${environment.baseurl}/mp3/downloadAll`, dataFilter);
+
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    // {responseType: 'blob'}
+    return this.http.post(`${environment.baseurl}/mp3/downloadAll`, dataFilter, {headers, responseType: 'arraybuffer'});
   }
   
   SaveToken(token: string) {
