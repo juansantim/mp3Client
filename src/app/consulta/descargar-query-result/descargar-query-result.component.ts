@@ -3,6 +3,8 @@ import { Mp3ServiceService } from 'src/app/Services/mp3-service.service';
 import { DataFilter } from 'src/app/model/DataFilter';
 import { PaginationResult } from 'src/app/model/PaginationResult';
 import * as FileSaver from 'file-saver';
+import { ToastrService } from 'ngx-toastr';
+ 
 
 declare var require: any
 
@@ -13,7 +15,7 @@ declare var require: any
 })
 export class DescargarQueryResultComponent implements OnInit {
 
-  constructor(private service: Mp3ServiceService) { }
+  constructor(private service: Mp3ServiceService, private toastr: ToastrService) { }
 
   dataFilter: DataFilter = new DataFilter();
   paginationResult: PaginationResult = new PaginationResult();
@@ -30,23 +32,13 @@ export class DescargarQueryResultComponent implements OnInit {
 
 
   Descargar() {
-
-    //const FileSaver = require('file-saver');
-
-    // this.service.GetDownloadAll(this.dataFilter).subscribe(data => {
-    //   console.log('file created', data);
-
-    //   this.downLoadFile(data, 'application/zip')
-    // })
-
+    this.toastr.warning('Inicializando descarga de archivos...')
     this.service.GetDownloadAll(this.dataFilter).subscribe((data: ArrayBuffer) => {
-      console.log(data);
-//      const blob = new Blob([data['_body']], { type: 'application/zip' });
-      const blob = new Blob([data], { type: 'application/zip' });
-      console.log('the blob: ', blob);
-      FileSaver.saveAs(blob, 'data.zip')
-      //saveAs(response, data.fileName + '.xlsx'));
+      this.toastr.warning('Guardando archivos')
 
+      const blob = new Blob([data], { type: 'application/zip' });      
+      FileSaver.saveAs(blob, 'data.zip')
+      this.toastr.success('Archivos descargado satisfactoriamente')
     })
   }
 }

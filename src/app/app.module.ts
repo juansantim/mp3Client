@@ -20,6 +20,9 @@ import { ConsultaAudiosComponent } from './pages/consulta-audios/consulta-audios
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+import { ToastrModule } from 'ngx-toastr';
+ 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,9 +43,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     HttpClientModule,
     NgxAudioPlayerModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    //PaginationModule,
+    FormsModule,    
+    BrowserAnimationsModule,    
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
