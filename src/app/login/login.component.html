@@ -15,7 +15,7 @@
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)] = "model.UserName">
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"  [(ngModel)] = "model.Password">
-      <input type="submit" class="btn btn-primary fadeIn fourth" value="Log In" (click) = "Login()">
+      <button type="button" class="btn btn-primary fadeIn fourth" (click) = "Login()">Log In</button>
 
     </form>
     <br />

@@ -7,21 +7,20 @@ import { FiltrosComponent } from './consulta/filtros/filtros.component';
 import { ResultadosComponent } from './consulta/resultados/resultados.component';
 import { ConsultaComponent } from './consulta/consulta/consulta.component';
 import { PlayerComponent } from './consulta/player/player.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DescargarAudioComponent } from './consulta/descargar-audio/descargar-audio.component';
 import { FormsModule } from '@angular/forms';
 import { PaginatorComponent } from './consulta/paginator/paginator.component';
 import { DescargarQueryResultComponent } from './consulta/descargar-query-result/descargar-query-result.component';
-//import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoginComponent } from './login/login.component';
-//import { ConsultaAudiosComponent } from './pages/consulta-audios/consulta-audios.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 import { ToastrModule } from 'ngx-toastr';
- 
+import { JwtInterceptor } from './Services/jwtInterceptor';
+JwtInterceptor
+
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { ToastrModule } from 'ngx-toastr';
     PaginatorComponent,
     DescargarQueryResultComponent,
     LoginComponent,
-    //ConsultaAudiosComponent,
     MainPageComponent,
     PageNotFoundComponent
   ],
@@ -43,11 +41,17 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     HttpClientModule,
     NgxAudioPlayerModule,
-    FormsModule,    
-    BrowserAnimationsModule,    
+    FormsModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
