@@ -16,7 +16,7 @@ import { PaginatorComponent } from './consulta/paginator/paginator.component';
 import { DescargarQueryResultComponent } from './consulta/descargar-query-result/descargar-query-result.component';
 //import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoginComponent } from './login/login.component';
-import { ConsultaAudiosComponent } from './pages/consulta-audios/consulta-audios.component';
+//import { ConsultaAudiosComponent } from './pages/consulta-audios/consulta-audios.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
@@ -34,7 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
     PaginatorComponent,
     DescargarQueryResultComponent,
     LoginComponent,
-    ConsultaAudiosComponent,
+    //ConsultaAudiosComponent,
     MainPageComponent,
     PageNotFoundComponent
   ],
