@@ -15,10 +15,12 @@
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" [(ngModel)] = "model.UserName">
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"  [(ngModel)] = "model.Password">
-      <button type="button" class="btn btn-primary fadeIn fourth" (click) = "Login()">Log In</button>
+      <button type="button" class="btn btn-primary fadeIn fourth" (click) = "Login()" *ngIf= "!cargando">Log In</button>
 
     </form>
     <br />
+
+    <img src="assets/img/ajax.gif" *ngIf="cargando">
 
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>

@@ -8,11 +8,21 @@ import { DataFilter } from '../model/DataFilter';
 import { PaginationResult } from '../model/PaginationResult';
 import { LoginModel } from '../model/loginModel';
 import { Router } from '@angular/router';
+import { User } from '../model/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Mp3ServiceService {
+  CerrarSesion() {
+    localStorage.clear()
+  }
+  
+  getUsuarioLogueado(): User {
+    let usuario:User = JSON.parse(localStorage.getItem(environment.credentials));
+
+    return usuario;
+  }
   
   
   constructor(private http: HttpClient) {

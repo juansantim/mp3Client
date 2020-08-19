@@ -19,8 +19,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtInterceptor } from './Services/jwtInterceptor';
-JwtInterceptor
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -43,6 +42,7 @@ JwtInterceptor
     NgxAudioPlayerModule,
     FormsModule,
     BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
     ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [
